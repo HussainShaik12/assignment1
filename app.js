@@ -23,7 +23,7 @@ console.log("Server started");
 });
 }
 catch(e){
-console.log(`DB Error:`${e.message});
+console.log(`DB Error:${e.message}`);
 process.exit(1);
 }
 }
@@ -119,7 +119,7 @@ const agenda =await database.all(getAgendaQuery);
 response.send(agenda);
 });
 
-app.post("/todos/", (request,response)=>{
+app.post("/todos/",async (request,response)=>{
 const {id,todo,status,priority,category,dueDate} = request.body;
 const addTodoQuery = `insert into todo (id,todo,status,priority,category,dueDate)
 values (${id},${todo},${status},${priority},${category},${dueDate});`;

@@ -57,7 +57,7 @@ return requestQuery.category!==undefined;
 
 app.get("/todos/",async(request,response) =>{
 
-const data=null;
+let data=null;
 const {search_q,status,priority,category} = request.query;
 let getTodosQuery = "";
 
